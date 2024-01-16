@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DiniEdup</string>
+    <string name="msg_learn_at_home">Learn at home UGC-NET (TRL) &amp; KUDMALI LANGUAGE</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="txt_image">Image</string>
+    <string name="txt_create_account">Create account</string>
+    <string name="txt_show">Show</string>
+    <string name="txt_forgot_pass">Forgot password?</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_signUp">Sign up</string>
+    <string name="txt_email">Email</string>
+    <string name="txt_password">Password</string>
+</resources>
