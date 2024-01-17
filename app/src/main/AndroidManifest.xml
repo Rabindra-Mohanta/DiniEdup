@@ -18,6 +18,9 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|keyboardHidden|screenLayout|screenSize"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.DiniEdup" />
         <activity
             android:screenOrientation="portrait"
