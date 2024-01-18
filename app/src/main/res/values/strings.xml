@@ -10,4 +10,8 @@
     <string name="txt_signUp">Sign up</string>
     <string name="txt_email">Email</string>
     <string name="txt_password">Password</string>
+    <string name="txt_confirm_pass">Confirm Password</string>
+    <string name="user_name">User Name</string>
+    <string name="txt_contactNumber">Contact Number</string>
+    <string name="txt_visibility_icon">visibility icon</string>
 </resources>
