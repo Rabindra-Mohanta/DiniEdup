@@ -14,4 +14,8 @@
     <string name="user_name">User Name</string>
     <string name="txt_contactNumber">Contact Number</string>
     <string name="txt_visibility_icon">visibility icon</string>
+    <string name="txt_home">Home</string>
+    <string name="txt_course">Course</string>
+    <string name="txt_search">Search</string>
+    <string name="txt_menu">Menu</string>
 </resources>

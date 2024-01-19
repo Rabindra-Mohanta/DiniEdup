@@ -32,10 +32,11 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun loginScreen() {
+fun loginScreen(navController: NavHostController) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(modifier = Modifier.height(DiniConstants.INT_60.dp))
         var editEmail by remember {
@@ -113,7 +114,7 @@ fun loginScreen() {
         )
         Spacer(modifier = Modifier.height(DiniConstants.INT_30.dp))
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { navController.navigate(DiniConstants.Tab_Screen) },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp)

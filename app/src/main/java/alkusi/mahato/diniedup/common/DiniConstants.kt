@@ -3,7 +3,7 @@ package alkusi.mahato.diniedup.common
 object  DiniConstants {
     const val HOME_SCREEN = "HOME_SCREEN"
     const val LOGIN_SIGNUP = "LOGIN_SIGNUP"
-    const val txt_home = "Home"
+    const val Tab_Screen = "Tab Screen"
     const val txt_splash_image = "SPLASH IMAGE"
     const val ZERO_INT = 0
     const val ONE_INT = 1
