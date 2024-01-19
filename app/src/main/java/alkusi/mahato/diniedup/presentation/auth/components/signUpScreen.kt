@@ -1,12 +1,14 @@
-package alkusi.mahato.diniedup.presentation.auth
+package alkusi.mahato.diniedup.presentation.auth.components
 
 import alkusi.mahato.diniedup.R
+import alkusi.mahato.diniedup.common.DiniConstants
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -14,6 +16,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -24,18 +27,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-@Preview(showSystemUi = true)
 fun signUpScreen() {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(DiniConstants.INT_20.dp))
         var edtFirstName by remember {
             mutableStateOf("")
         }
@@ -50,12 +52,23 @@ fun signUpScreen() {
             },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 30.dp)
+                .padding(horizontal = DiniConstants.INT_30.dp),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = colorResource(id = R.color.deep_purple),
+                unfocusedBorderColor = colorResource(
+                    id = R.color.black
+                ),
+                textColor = colorResource(id = R.color.deep_purple),
+                cursorColor = colorResource(id = R.color.deep_purple)
+            ),
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next)
         )
-        Spacer(modifier = Modifier.height(20.dp))
+
+        Spacer(modifier = Modifier.height(DiniConstants.INT_20.dp))
         var edtEmail by remember {
             mutableStateOf("")
         }
+
         OutlinedTextField(
             value = edtEmail,
             onValueChange = { edtEmail = it },
@@ -67,9 +80,19 @@ fun signUpScreen() {
             },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 30.dp)
+                .padding(horizontal = DiniConstants.INT_30.dp),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = colorResource(id = R.color.deep_purple),
+                unfocusedBorderColor = colorResource(
+                    id = R.color.black
+                ),
+                textColor = colorResource(id = R.color.deep_purple),
+                cursorColor = colorResource(id = R.color.deep_purple)
+            ),
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next)
         )
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(DiniConstants.INT_20.dp))
+
         var edtContactNumber by remember {
             mutableStateOf("")
         }
@@ -84,9 +107,18 @@ fun signUpScreen() {
             },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 30.dp)
+                .padding(horizontal = DiniConstants.INT_30.dp),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = colorResource(id = R.color.deep_purple),
+                unfocusedBorderColor = colorResource(
+                    id = R.color.black
+                ),
+                textColor = colorResource(id = R.color.deep_purple),
+                cursorColor = colorResource(id = R.color.deep_purple)
+            ),
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next)
         )
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(DiniConstants.INT_20.dp))
 
         var edtPassword by remember {
             mutableStateOf("")
@@ -109,16 +141,27 @@ fun signUpScreen() {
             placeholder = { Text(text = stringResource(R.string.txt_password)) },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 30.dp), trailingIcon = {
+                .padding(horizontal = DiniConstants.INT_30.dp),
+            trailingIcon = {
                 IconButton(onClick = { passwordVisibility = !passwordVisibility }) {
                     Icon(
                         painter = passWordIcon,
                         contentDescription = stringResource(id = R.string.txt_visibility_icon)
                     )
                 }
-            }, visualTransformation = if(passwordVisibility) VisualTransformation.None else PasswordVisualTransformation()
+            },
+            visualTransformation = if (passwordVisibility) VisualTransformation.None else PasswordVisualTransformation(),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = colorResource(id = R.color.deep_purple),
+                unfocusedBorderColor = colorResource(
+                    id = R.color.black
+                ),
+                textColor = colorResource(id = R.color.deep_purple),
+                cursorColor = colorResource(id = R.color.deep_purple)
+            ),
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next)
         )
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(DiniConstants.INT_20.dp))
         var edtConfirmPassword by remember {
             mutableStateOf("")
         }
@@ -140,7 +183,8 @@ fun signUpScreen() {
             placeholder = { Text(text = stringResource(id = R.string.txt_confirm_pass)) },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 30.dp), trailingIcon = {
+                .padding(horizontal = DiniConstants.INT_30.dp),
+            trailingIcon = {
                 IconButton(onClick = { confirmPassVisibility = !confirmPassVisibility }) {
                     Icon(
                         painter = confirmPassIcon,
@@ -148,15 +192,18 @@ fun signUpScreen() {
                     )
 
                 }
-            }
-            , visualTransformation = if(confirmPassVisibility) VisualTransformation.None else PasswordVisualTransformation()
+            },
+            visualTransformation = if (confirmPassVisibility) VisualTransformation.None else PasswordVisualTransformation(),
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done)
         )
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(DiniConstants.INT_30.dp))
         Button(
-            onClick = { /*TODO*/ }, modifier = Modifier
+            onClick = { /*TODO*/ },
+            modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 30.dp)
-                .height(50.dp), shape = RoundedCornerShape(10.dp),
+                .padding(horizontal = DiniConstants.INT_30.dp)
+                .height(DiniConstants.INT_50.dp),
+            shape = RoundedCornerShape(DiniConstants.TEN_INT.dp),
             colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.deep_purple))
         ) {
             Text(text = stringResource(id = R.string.txt_create_account))

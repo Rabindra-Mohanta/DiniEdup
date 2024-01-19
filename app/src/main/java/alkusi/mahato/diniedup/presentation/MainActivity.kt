@@ -1,10 +1,10 @@
-package alkusi.mahato.diniedup
+package alkusi.mahato.diniedup.presentation
 
 import alkusi.mahato.diniedup.navigation.SetupNavGraph
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import alkusi.mahato.diniedup.presentation.theme.DiniEdupTheme
+import alkusi.mahato.diniedup.presentation.ui.theme.DiniEdupTheme
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface

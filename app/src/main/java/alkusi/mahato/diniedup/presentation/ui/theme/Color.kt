@@ -1,4 +1,4 @@
-package alkusi.mahato.diniedup.presentation.theme
+package alkusi.mahato.diniedup.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

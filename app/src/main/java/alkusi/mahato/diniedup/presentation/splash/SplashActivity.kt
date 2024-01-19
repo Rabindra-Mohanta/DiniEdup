@@ -1,6 +1,8 @@
-package alkusi.mahato.diniedup
+package alkusi.mahato.diniedup.presentation.splash
 
-import alkusi.mahato.diniedup.constants.DiniConstants
+import alkusi.mahato.diniedup.R
+import alkusi.mahato.diniedup.common.DiniConstants
+import alkusi.mahato.diniedup.presentation.MainActivity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -8,7 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import alkusi.mahato.diniedup.ui.theme.DiniEdupTheme
+import alkusi.mahato.diniedup.presentation.ui.theme.DiniEdupTheme
 import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column

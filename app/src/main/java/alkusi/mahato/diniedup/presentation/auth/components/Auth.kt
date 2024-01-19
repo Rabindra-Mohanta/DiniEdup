@@ -1,6 +1,7 @@
-package alkusi.mahato.diniedup.presentation.auth
+package alkusi.mahato.diniedup.presentation.auth.components
 
 import alkusi.mahato.diniedup.R
+import alkusi.mahato.diniedup.common.DiniConstants
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -50,13 +51,13 @@ fun Auth() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(DiniConstants.INT_20.dp))
             Image(
                 painter = painterResource(id = R.drawable.logo),
                 contentDescription = stringResource(id = R.string.txt_image),
                 contentScale = ContentScale.Fit,
                 modifier = Modifier
-                    .height(150.dp)
+                    .height(DiniConstants.INT_150.dp)
                     .fillMaxWidth(), alignment = Alignment.TopCenter
             )
             Box {
@@ -64,51 +65,63 @@ fun Auth() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .fillMaxHeight(),
-                    shape = RoundedCornerShape(topStart = 40.dp, topEnd = 40.dp),
-                    elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+                    shape = RoundedCornerShape(
+                        topStart = DiniConstants.INT_40.dp,
+                        topEnd = DiniConstants.INT_40.dp
+                    ),
+                    elevation = CardDefaults.cardElevation(defaultElevation = DiniConstants.TEN_INT.dp),
                     colors = CardDefaults.cardColors(
                         containerColor = colorResource(id = R.color.deep_purple),
                     )
                 ) {
                     var selectedText by remember {
-                        mutableStateOf(0)
+                        mutableStateOf(DiniConstants.ZERO_INT)
                     }
                     var loginTextColor =
-                        if (selectedText == 0) colorResource(id = R.color.white) else colorResource(
+                        if (selectedText == DiniConstants.ZERO_INT) colorResource(id = R.color.white) else colorResource(
                             id = R.color.gray
                         )
                     var signUpTextColor =
                         if (selectedText == 1) colorResource(id = R.color.white) else colorResource(
                             id = R.color.gray
                         )
-                    Spacer(modifier = Modifier.height(20.dp))
+                    Spacer(modifier = Modifier.height(DiniConstants.INT_20.dp))
                     Row(
                         horizontalArrangement = Arrangement.SpaceEvenly, modifier = Modifier
                             .fillMaxWidth()
-                            .padding(horizontal = 20.dp)
+                            .padding(horizontal = DiniConstants.INT_20.dp)
                     ) {
                         ClickableText(
                             text = AnnotatedString(stringResource(id = R.string.txt_login).toUpperCase()),
-                            onClick = { selectedText = 0 },
-                            style = TextStyle(fontSize = 20.sp, color = loginTextColor)
+                            onClick = { selectedText = DiniConstants.ZERO_INT },
+                            style = TextStyle(
+                                fontSize = DiniConstants.INT_20.sp,
+                                color = loginTextColor
+                            )
                         )
                         ClickableText(
                             text = AnnotatedString(stringResource(id = R.string.txt_signUp).toUpperCase()),
-                            onClick = { selectedText = 1 },
-                            style = TextStyle(fontSize = 20.sp, color = signUpTextColor)
+                            onClick = { selectedText = DiniConstants.ONE_INT },
+                            style = TextStyle(
+                                fontSize = DiniConstants.INT_20.sp,
+                                color = signUpTextColor
+                            )
                         )
                     }
-                    Spacer(modifier = Modifier.height(30.dp))
+                    Spacer(modifier = Modifier.height(DiniConstants.INT_30.dp))
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
                             .fillMaxHeight(),
-                        shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp),
+                        shape = RoundedCornerShape(
+                            topStart = DiniConstants.INT_20.dp,
+                            topEnd = DiniConstants.INT_20.dp
+                        ),
                         colors = CardDefaults.cardColors(
                             containerColor = colorResource(id = R.color.white),
                         )
                     ) {
-                        if (selectedText == 0) {
+                        if (selectedText == DiniConstants.ZERO_INT) {
                             loginScreen()
                         } else {
                             signUpScreen()

@@ -1,6 +1,6 @@
 package alkusi.mahato.diniedup.navigation
 
-import alkusi.mahato.diniedup.presentation.auth.Auth
+import alkusi.mahato.diniedup.presentation.auth.components.Auth
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost

@@ -1,6 +1,6 @@
 package alkusi.mahato.diniedup.navigation
 
-import alkusi.mahato.diniedup.constants.DiniConstants
+import alkusi.mahato.diniedup.common.DiniConstants
 
 sealed class Screen(val route:String)
 {

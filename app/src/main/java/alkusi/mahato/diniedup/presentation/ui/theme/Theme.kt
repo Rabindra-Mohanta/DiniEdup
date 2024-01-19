@@ -1,4 +1,4 @@
-package alkusi.mahato.diniedup.ui.theme
+package alkusi.mahato.diniedup.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
