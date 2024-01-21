@@ -15,7 +15,7 @@ fun SetupNavGraph(navController: NavHostController) {
             Auth(navController)
         }
         composable(route = Screen.Tabs.route){
-            BottomTabs(navController)
+            BottomTabs()
         }
 
     }
