@@ -1,5 +1,4 @@
 package alkusi.mahato.diniedup.presentation.tabs.components
-
 import alkusi.mahato.diniedup.R
 import alkusi.mahato.diniedup.common.DiniConstants
 import alkusi.mahato.diniedup.presentation.course.components.CourseScreen
@@ -35,53 +34,86 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable()
 @Preview(showBackground = true)
-fun BottomTabs()
-{
+fun BottomTabs() {
     var selectedItemIndex by rememberSaveable {
         mutableStateOf(DiniConstants.ZERO_INT)
     }
     val items = listOf(
-        BottomNavigationItem(title = stringResource(id = R.string.txt_home), selectedIcon = Icons.Filled.Home, unselectedIcon = Icons.Outlined.Home,hasNotification = false),
-        BottomNavigationItem(title = stringResource(id = R.string.txt_course), selectedIcon = Icons.Filled.Note, unselectedIcon = Icons.Outlined.Note,hasNotification = false),
-        BottomNavigationItem(title = stringResource(id = R.string.txt_search), selectedIcon = Icons.Filled.Search, unselectedIcon = Icons.Outlined.Search,hasNotification = false),
-        BottomNavigationItem(title = stringResource(id = R.string.txt_menu), selectedIcon = Icons.Filled.Menu, unselectedIcon = Icons.Outlined.Menu,hasNotification = true,badgeCount = 15)
+        BottomNavigationItem(
+            title = stringResource(id = R.string.txt_home),
+            selectedIcon = Icons.Filled.Home,
+            unselectedIcon = Icons.Outlined.Home,
+            hasNotification = false
+        ),
+        BottomNavigationItem(
+            title = stringResource(id = R.string.txt_course),
+            selectedIcon = Icons.Filled.Note,
+            unselectedIcon = Icons.Outlined.Note,
+            hasNotification = false
+        ),
+        BottomNavigationItem(
+            title = stringResource(id = R.string.txt_search),
+            selectedIcon = Icons.Filled.Search,
+            unselectedIcon = Icons.Outlined.Search,
+            hasNotification = false
+        ),
+        BottomNavigationItem(
+            title = stringResource(id = R.string.txt_menu),
+            selectedIcon = Icons.Filled.Menu,
+            unselectedIcon = Icons.Outlined.Menu,
+            hasNotification = true,
+            badgeCount = 15
+        )
     )
-    Scaffold(bottomBar = { NavigationBar {
-        items.forEachIndexed { index, item ->
-            NavigationBarItem(selected = selectedItemIndex == index, onClick = { selectedItemIndex = index
-                 }, label = { Text(text = item.title)}, alwaysShowLabel = false, icon = { BadgedBox(badge = {if(item.badgeCount!=null){
-                Badge {
-                    Text(text = item.badgeCount.toString())
-                }}
-                else if(item.hasNotification){
-                Badge()}
-                }){ Icon(
-                imageVector = if(index==selectedItemIndex){item.selectedIcon} else item.unselectedIcon,
-                contentDescription = item.title
-            )} })
-        }
+    Scaffold(bottomBar = {
+        NavigationBar {
+            items.forEachIndexed { index, item ->
+                NavigationBarItem(selected = selectedItemIndex == index, onClick = {
+                    selectedItemIndex = index
+                }, label = { Text(text = item.title) }, alwaysShowLabel = false, icon = {
+                    BadgedBox(badge = {
+                        if (item.badgeCount != null) {
+                            Badge {
+                                Text(text = item.badgeCount.toString())
+                            }
+                        } else if (item.hasNotification) {
+                            Badge()
+                        }
+                    }) {
+                        Icon(
+                            imageVector = if (index == selectedItemIndex) {
+                                item.selectedIcon
+                            } else item.unselectedIcon,
+                            contentDescription = item.title
+                        )
+                    }
+                })
+            }
 
-    }
-    },floatingActionButton = {
-        SmallFloatingActionButton(onClick = { }, containerColor = MaterialTheme.colorScheme.secondaryContainer, contentColor = MaterialTheme.colorScheme.secondary) {
-        Icon(imageVector = Icons.Filled.Add, contentDescription = stringResource(id = R.string.txt_image))
-    }
+        }
+    }, floatingActionButton = {
+        SmallFloatingActionButton(
+            onClick = { },
+            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+            contentColor = MaterialTheme.colorScheme.secondary
+        ) {
+            Icon(
+                imageVector = Icons.Filled.Add,
+                contentDescription = stringResource(id = R.string.txt_image)
+            )
+        }
     }) {
-        when(selectedItemIndex)
-        {
-            DiniConstants.ZERO_INT ->HomeScreen()
-                DiniConstants.ONE_INT -> CourseScreen()
+        when (selectedItemIndex) {
+            DiniConstants.ZERO_INT -> HomeScreen()
+            DiniConstants.ONE_INT -> CourseScreen()
             DiniConstants.TWO_INT -> SearchScreen()
             DiniConstants.THREE_INT -> MenuScreen()
             else -> HomeScreen()
-
         }
-
-
-
     }
 }
