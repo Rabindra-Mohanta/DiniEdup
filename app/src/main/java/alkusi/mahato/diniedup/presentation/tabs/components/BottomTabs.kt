@@ -1,4 +1,5 @@
 package alkusi.mahato.diniedup.presentation.tabs.components
+
 import alkusi.mahato.diniedup.R
 import alkusi.mahato.diniedup.common.DiniConstants
 import alkusi.mahato.diniedup.presentation.course.components.CourseScreen
@@ -40,6 +41,7 @@ import androidx.compose.ui.tooling.preview.Preview
 @Composable()
 @Preview(showBackground = true)
 fun BottomTabs() {
+
     var selectedItemIndex by rememberSaveable {
         mutableStateOf(DiniConstants.ZERO_INT)
     }
@@ -108,6 +110,7 @@ fun BottomTabs() {
             )
         }
     }) {
+
         when (selectedItemIndex) {
             DiniConstants.ZERO_INT -> HomeScreen()
             DiniConstants.ONE_INT -> CourseScreen()
@@ -115,5 +118,7 @@ fun BottomTabs() {
             DiniConstants.THREE_INT -> MenuScreen()
             else -> HomeScreen()
         }
+
+        NavigationDrawer()
     }
 }

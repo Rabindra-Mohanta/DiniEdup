@@ -25,4 +25,5 @@
     <string name="txt_liveClass">Live Class</string>
     <string name="txt_test_series">Test Series</string>
     <string name="txt_payment">Payment</string>
+    <string name="symbol_rupee">₹</string>
 </resources>

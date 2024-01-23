@@ -18,6 +18,7 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalTextStyle
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -34,14 +35,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable()
-@Preview(showBackground = true)
 fun HomeScreen() {
+Surface {
+
+}
     Column {
 
         Image(modifier = Modifier
@@ -51,7 +53,7 @@ fun HomeScreen() {
             .align(alignment = Alignment.End)
             .padding(top = 5.dp, end = 5.dp), painter = painterResource(id = R.drawable.logo), contentDescription = stringResource(id = R.string.txt_image)
         )
-        Text(text = stringResource(id = R.string.txt_welcome_back) +" Rabindra Mohanta!", modifier = Modifier.padding(horizontal = 10.dp), fontSize = 34.sp, fontWeight = FontWeight.W500, color = colorResource(id = R.color.dark_purple), lineHeight = 35.sp)
+        Text(text = stringResource(id = R.string.txt_welcome_back) +" Rabindra Mohanta!", modifier = Modifier.padding(horizontal = 10.dp), fontSize = 34.sp, fontWeight = FontWeight.W500, color = colorResource(id = R.color.black), lineHeight = 35.sp)
         Spacer(modifier = Modifier.height(10.dp))
         var editSear by remember { mutableStateOf("") }
         TextField(value = editSear, onValueChange ={editSear = it}, placeholder = { Text(text = stringResource(id = R.string.txt_search_for_new_knowledge), fontSize = 15.sp)},modifier = Modifier
