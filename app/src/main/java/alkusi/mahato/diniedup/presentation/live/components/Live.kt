@@ -1,4 +1,4 @@
-package alkusi.mahato.diniedup.presentation.search.components
+package alkusi.mahato.diniedup.presentation.live.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -11,9 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 
 @Composable
-fun SearchScreen()
-{
+fun Live() {
     Box(modifier = Modifier.fillMaxWidth().fillMaxHeight().background(color = Color.Blue), contentAlignment = Alignment.Center) {
-        Text(text = "Search")
+        Text(text = "Live")
     }
 }
